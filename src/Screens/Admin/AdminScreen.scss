@@ -1,0 +1,42 @@
+.admin-screen {
+    .row {        
+        margin-top: 3.5rem;
+        .col-2 {
+            background: #6B3e2b;                        
+            ul {                
+                li {
+                    list-style: none;
+                    a {
+                        text-decoration: none;
+                        color: white;
+                    }
+                }
+            }
+        }
+        .col-10 {
+            background: linear-gradient(to right, #CEA430, #6B3e2b);
+            padding: 0 !important;
+            .admin_screen_top {
+                border-bottom: solid 1px rgb(206, 212, 218);
+                padding: 2rem;
+            }
+            .admin_screen_bottom {
+                padding: 5rem;
+                .form-group {
+                    position: relative;
+                    .btn-search {
+                        position: absolute;
+                        right: 0;
+                        top: 1px;
+                        border: none;
+                    }
+                }
+
+                .table {
+                    box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.3), 0 0 50px 0 rgba(0, 0, 0, 0.4) inset;
+                    background-color: white;
+                }
+            }
+        }
+    }
+}

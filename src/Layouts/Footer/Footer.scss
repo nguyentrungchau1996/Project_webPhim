@@ -1,0 +1,91 @@
+section {
+    padding: 2.5rem 0;
+    .container {
+        .row {
+            .col-2 {
+                ul {
+                    padding: 0;
+                    list-style: none;
+                    margin-top: 1rem;
+                    li {
+                        a {
+                            color: black;
+                        }
+                    }
+                }
+            }
+            .col_normal {
+                ul {
+                    margin-bottom: 0;
+                    li {
+                        a {
+                            color: black;
+                            transition: all 0.25s;
+                            -webkit-transition: all 0.25s;
+                            -moz-transition: all 0.25s;
+                            -ms-transition: all 0.25s;
+                            -o-transition: all 0.25s;
+                        }
+                        &:hover {
+                            a {
+                                text-decoration: none;
+                                color: #CEA430;
+                                transition: all 0.25s;
+                                -webkit-transition: all 0.25s;
+                                -moz-transition: all 0.25s;
+                                -ms-transition: all 0.25s;
+                                -o-transition: all 0.25s;
+                            }
+                        }
+                    }
+                }
+            }
+            .ket_noi {
+                padding: 0;
+                ul {
+                    li {
+                        a {
+                            margin-right: 0.5rem;
+                            font-size: 1.5rem;
+                            transition: all 0.25s;
+                            -webkit-transition: all 0.25s;
+                            -moz-transition: all 0.25s;
+                            -ms-transition: all 0.25s;
+                            -o-transition: all 0.25s;
+                            &:hover {
+                                i {
+                                    transition: all 0.25s;
+                                    -webkit-transition: all 0.25s;
+                                    -moz-transition: all 0.25s;
+                                    -ms-transition: all 0.25s;
+                                    -o-transition: all 0.25s;
+                                }
+                                i.fa-facebook {
+                                    color: #4267b2;
+                                }
+                                i.fa-youtube-play {
+                                    color: #DC483C;
+                                }
+                                i.fa-google-plus {
+                                    color: #CF4538;
+                                }
+                                i.fa-instagram {
+                                    color: #AB4095;
+                                }
+                                i.fa-linkedin {
+                                    color: #0179B5;
+                                }
+                                i.fa-apple {
+                                    color: #76BEE9;
+                                }
+                                i.fa-android {
+                                    color: #93DB24;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

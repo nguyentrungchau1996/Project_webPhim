@@ -1,0 +1,31 @@
+.col-12 {
+    .card_time {
+        border: 1px solid rgba(0,0,0,.125);
+        .card-body {
+            padding: 0.75rem 1.25rem;
+            span {
+                width: 5rem;
+                font-size: 1.25rem;
+            }
+            .btnGioChieu {
+                position: relative;
+                color: #CEA430;
+                font-size: 1rem;
+                font-weight: 600;
+                background-color: #ffffff;
+                border: solid 3px #CEA430;
+                box-shadow: 2px 2px 0px #CEA430;
+                transition: none;
+                -webkit-transition: none;
+                -moz-transition: none;
+                -ms-transition: none;
+                -o-transition: none;
+                &:hover {
+                    top: 2px;
+                    right: 2px;
+                    box-shadow: 2px 2px 0px transparent;
+                }
+            }
+        }
+    }
+}

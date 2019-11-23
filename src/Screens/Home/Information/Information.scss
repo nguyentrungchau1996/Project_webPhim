@@ -1,0 +1,62 @@
+section{
+    margin-top: 7rem;
+    div {
+        position: relative;
+        .btnTitle {
+            position: absolute;
+            bottom: -0.75rem;
+            color: black;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -ms-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            padding: 0.5rem;
+            box-shadow: none;
+            &:hover {
+                position: absolute;
+                bottom: -1rem;
+                font-size: 2rem;
+                color: #CEA430;
+                transition: all 0.3s;
+                -webkit-transition: all 0.3s;
+                -moz-transition: all 0.3s;
+                -ms-transition: all 0.3s;
+                -o-transition: all 0.3s;
+            }
+        }
+        .active {
+            position: absolute;
+            bottom: -1rem;
+            font-size: 2rem;
+            color: #CEA430;
+            transition: all 0.3s;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -ms-transition: all 0.3s;
+            -o-transition: all 0.3s;
+        }
+        .btnNews {
+            left: 40rem;
+            &:hover {
+                left: 40rem;
+            }
+        }
+        .btnReview {
+            left: 49rem;
+            
+            &:hover {
+                left: 49rem;
+                
+            }
+        }
+        .btnPromotion {
+            right: 38rem;
+            &:hover {
+                right: 38rem;
+            }
+        }
+    }    
+}

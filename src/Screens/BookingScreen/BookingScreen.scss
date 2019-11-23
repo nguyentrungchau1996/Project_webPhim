@@ -1,0 +1,24 @@
+.booking_screen{
+    padding: 8rem 0 5rem;
+    .row{
+        .col-6{
+            .card{
+                border: solid 1px rgba(0,0,0,0.1);
+                .card-header{
+                    background-color: #CEA430;
+                    h5{
+                        margin-bottom: 0;
+                        text-transform: uppercase;
+                        color: #ffffff;
+                        font-size: 1.15rem;
+                    }
+                }
+                .card-body {
+                    p {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,138 @@
+.signin_screen {
+    position: relative;
+    background: linear-gradient(to right, #CEA430, #6B3e2b);
+    height: 60rem;
+
+    .signin_screen_title {
+        position: absolute;
+        top: 21%;
+        left: 39.5%;
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+    }
+
+    .col-3 {
+        position: absolute;
+        background: white;
+        box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.3), 0 0 50px 0 rgba(0, 0, 0, 0.4) inset;
+        z-index: 2;
+        color: #CEA430;
+        top: 30%;
+        left: 38%;
+        border-radius: 1rem;
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        -ms-border-radius: 1rem;
+        -o-border-radius: 1rem;
+        padding: 1.5rem;
+
+        .form-group {
+
+            -webkit-transition: all 0.4s;
+            -o-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            transition: all 0.4s;
+            -ms-transition: all 0.4s;
+
+            .form_overlay {
+                height: 0.25rem;
+                margin-top: -0.25rem;
+                border-radius: 5rem;
+                -webkit-border-radius: 5rem;
+                -moz-border-radius: 5rem;
+                -ms-border-radius: 5rem;
+                -o-border-radius: 5rem;
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    content: "";
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    height: 3px;
+                    background: linear-gradient(to right, #CEA430, #6B3e2b);
+                    transition: all 0.4s;
+                    -webkit-transition: all 0.4s;
+                    -moz-transition: all 0.4s;
+                    -ms-transition: all 0.4s;
+                    -o-transition: all 0.4s;
+                }
+
+                i {
+                    position: absolute;
+                    font-size: 1.5rem;
+                    bottom: 1rem;
+                    left: 1rem;
+                }
+            }
+
+            input {
+                font-size: 20px;
+                color: #555555;
+                line-height: 1.2;
+                display: block;
+                width: 100%;
+                height: 50px;
+                padding: 0 10px 4px 70px;
+                border-left: none;
+                border-right: none;
+                border-top: none;
+                background: transparent;
+
+                &:focus {
+                    outline: none;
+                    border-color: #ced4da;
+                    box-shadow: none;
+                }
+
+                &:focus+.form_overlay {
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 3px;
+                        background: linear-gradient(to right, #CEA430, #6B3e2b);
+                        transition: all 0.4s;
+                        -webkit-transition: all 0.4s;
+                        -moz-transition: all 0.4s;
+                        -ms-transition: all 0.4s;
+                        -o-transition: all 0.4s;
+                    }
+                }
+            }
+
+            .btn {
+                position: relative;
+                border: solid 3px #CEA430;
+                color: #CEA430;
+                font-size: 1rem;
+                font-weight: 600;
+                background-color: #ffffff;
+                box-shadow: 2px 2px 0px #CEA430;
+                transition: none;
+                -webkit-transition: none;
+                -moz-transition: none;
+                -ms-transition: none;
+                -o-transition: none;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-weight: 900;
+
+                &:hover {
+                    top: 2px;
+                    left: 2px;
+                    box-shadow: 2px 2px 0px transparent;
+                }
+            }
+        }
+
+        .form_button {
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+    }
+}

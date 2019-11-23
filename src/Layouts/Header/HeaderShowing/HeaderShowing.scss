@@ -1,0 +1,68 @@
+.img_item {
+    position: relative;
+    img {
+        width: 10rem;
+        height: 12rem;
+        border-radius: 0.5rem;
+        -webkit-border-radius: 0.5rem;
+        -moz-border-radius: 0.5rem;
+        -ms-border-radius: 0.5rem;
+        -o-border-radius: 0.5rem;
+    }
+    h5 {
+        margin-bottom: 0;
+    }
+    .background_overlay {
+        position: absolute;
+        top: 0;
+        left: 1.8rem;
+        width: 10rem;
+        height: 12rem;
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 0.5rem;
+        -webkit-border-radius: 0.5rem;
+        -moz-border-radius: 0.5rem;
+        -ms-border-radius: 0.5rem;
+        -o-border-radius: 0.5rem;
+        opacity: 0;
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        .btnChon {
+            color: #ffffff;
+            background-color: transparent;
+            border: solid 2px #ffffff;
+            padding: 0.25rem 0.75rem;
+            margin-top: 3.6rem;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -ms-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            &:hover {
+                border: solid 2px #CEA430;
+                background-color: #CEA430 !important;
+            }
+        }
+    }
+    &:hover {
+        .background_overlay {
+            opacity: 1;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -ms-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            .btnChon {
+                margin-top: 4.3rem;
+                transition: all 0.5s;
+                -webkit-transition: all 0.5s;
+                -moz-transition: all 0.5s;
+                -ms-transition: all 0.5s;
+                -o-transition: all 0.5s;
+            }
+        }
+    }
+}

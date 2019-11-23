@@ -1,0 +1,33 @@
+.booking_show_time {
+    .card {
+        text-align: center;
+        padding: 1rem 0;
+        .card-body {
+            span {
+                font-size: 1.25rem;
+            }
+            .btn {
+                position: relative;
+                color: #CEA430;
+                font-size: 1.25rem;
+                font-weight: 600;
+                background-color: #ffffff;
+                border: solid 3px #CEA430;
+                box-shadow: 2px 2px 0px #CEA430;
+                transition: none;
+                -webkit-transition: none;
+                -moz-transition: none;
+                -ms-transition: none;
+                -o-transition: none;
+                &:hover {
+                    top: 2px;
+                    right: 2px;
+                    box-shadow: 2px 2px 0px transparent;
+                }
+            }
+        }
+        &:hover {
+            background-color: #f5f5f5;
+        }
+    }    
+}
