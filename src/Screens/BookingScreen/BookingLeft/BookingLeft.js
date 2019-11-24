@@ -7,7 +7,8 @@ import { Link } from "react-router-dom";
 
 //Component trả ra danh sách phim đang chiếu
 const BookingLeft = props => {
-  const dispatch = useDispatch();  
+  const dispatch = useDispatch();
+  
   useEffect(() => {
     dispatch(fetchShow());
   }, [dispatch]);
@@ -18,7 +19,7 @@ const BookingLeft = props => {
         <div className="row">
           <div className="col-4">
             <div className="img">
-              <img src={show.HinhAnh} alt="booking_left" />
+              <img src={show.hinhAnh} alt="booking_left" />
               <a href="#">
                 <i className="fa fa-play-circle-o text-white" />
               </a>
@@ -26,13 +27,16 @@ const BookingLeft = props => {
             </div>
           </div>
           <div className="col-8">
-            <p>{show.TenPhim}</p>
+            <p>{show.tenPhim}</p>
             <div>
-              <button type="button" className="btn btnChiTiet mr-2">
-                Chi tiết
-              </button>
               <Link
-                to={{ pathname: `/chosenshow/${show.MaPhim}` }}
+                to={{ pathname: `/detail/${show.maPhim}` }}
+                className="btn btnChiTiet mr-2"
+              >
+                Chi tiết
+              </Link>
+              <Link
+                to={{ pathname: `/chosenshow/${show.maPhim}` }}
                 className="btn btnChonPhim"
               >
                 Chọn phim

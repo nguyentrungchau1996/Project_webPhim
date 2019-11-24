@@ -9,8 +9,6 @@ import DetailedShow from "./DetailedShow/DetailedShow";
 const Detail = props => {
   const dispatch = useDispatch();
 
-  console.log(props.detailedShow);
-
   const filmId = props.match.params.filmId;
   //Chỉ render lại khi filmId thay đổi
   useEffect(() => {

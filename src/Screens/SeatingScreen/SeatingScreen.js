@@ -5,28 +5,27 @@ import Footer from "../../Layouts/Footer/Footer";
 import SeatingItem from "./SeatingItem/SeatingItem";
 import { connect, useDispatch } from "react-redux";
 import _ from "lodash";
-import { fetchSeating } from "../../Redux/Actions/Seating";
+import { fetchSeating, fetchBookingSeat } from "../../Redux/Actions/Seating";
+import BookingSeat from "./BookingSeat/BookingSeat";
 
 const SeatingScreen = props => {
   const dispatch = useDispatch();
   const showId = props.match.params.showId;
 
   useEffect(() => {
-    dispatch(fetchSeating(showId));
+    return dispatch(fetchSeating(showId));
   }, [showId, dispatch]);
 
-  console.log(props.seatsOfShow);
-
   const _renderSeatingItem = () =>
-    _.get(props, "seatsOfShow.DanhSachGhe", []).map((seatitem, index) => {
+    _.get(props, "seatsOfShow.danhSachGhe", []).map((seatitem, index) => {
       return (
         <div key={index} style={{ display: "inline-block" }}>
           <SeatingItem seatitem={seatitem} />
-          {/* Qui định trên 1 hàng chỉ có 8 ghế */}
-          {(index + 1) % 8 === 0 && <br />}
         </div>
       );
     });
+
+  // useEffect(() => console.log(props.bookingSeats), [props.bookingSeats]);
 
   return (
     <>
@@ -61,22 +60,7 @@ const SeatingScreen = props => {
           </div>
           <div className="col-md-4 mx-auto">
             <h1 className="display-4 text-center">Ghế đã chọn</h1>
-            <p className="lead">
-              Ghế
-              <span>
-                : {"{"}
-                {"{"}gheten{"}"}
-                {"}"} - {"{"}
-                {"{"}ghegia{"}"}
-                {"}"} VND
-              </span>
-              <span className="alert alert-danger ml-2">Hủy</span>
-            </p>
-            <h2 className="display-5 text-center">
-              Tổng cộng: {"{"}
-              {"{"}tongTien{"}"}
-              {"}"} VNĐ
-            </h2>
+            <BookingSeat />
           </div>
         </div>
       </div>
@@ -87,7 +71,8 @@ const SeatingScreen = props => {
 };
 
 const mapStateToProps = state => ({
-  seatsOfShow: state.seating.seatsOfShow
+  seatsOfShow: state.seating.seatsOfShow,
+  bookingSeats: state.seating.bookingSeats
 });
 
 export default connect(mapStateToProps)(SeatingScreen);

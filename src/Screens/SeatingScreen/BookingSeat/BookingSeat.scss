@@ -1,0 +1,23 @@
+p {
+    padding: 1rem 1rem 0.25rem 2.25rem;
+    margin-bottom: 0;
+    font-weight: 500;
+    span {
+        font-weight: 300;
+    }
+    .alert {
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+    }
+}
+h2 {
+    color: #ffffff;
+    background-color: #CEA430;
+    position: absolute;
+    font-weight: 400;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 0;
+    padding: 1rem 0 0.25rem;
+}

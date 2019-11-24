@@ -18,7 +18,7 @@ class CinemaService {
 
   fetchSeating(showId) {
     return restConnector({
-      url: `http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${showId}`,
+      url: `http://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=${showId}`,
       method: "GET"
     });
   }

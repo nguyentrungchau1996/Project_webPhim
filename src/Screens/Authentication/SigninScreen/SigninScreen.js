@@ -37,6 +37,7 @@ const SigninScreen = props => {
                 name="taiKhoan"
                 onChange={_handleChange}
                 placeholder="User name"
+                required
               />
               <div className="form_overlay">
                 <i className="fa fa-user" aria-hidden="true"></i>
@@ -50,6 +51,7 @@ const SigninScreen = props => {
                 name="matKhau"
                 onChange={_handleChange}
                 placeholder="Password"
+                required
               />
               <div className="form_overlay">
                 <i className="fa fa-lock" aria-hidden="true"></i>

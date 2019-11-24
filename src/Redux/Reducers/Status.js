@@ -3,7 +3,7 @@ import { CHANGE_EDIT_STATUS } from "../Actions/ActionType";
 let initialState = {
   //Nếu là true <-> trạng thái Cập nhật
   //Nếu là false <-> Thêm người dùng
-  editStatus: false
+  editStatus: false,
 };
 
 const StatusReducer = (state = initialState, action) => {

@@ -1,4 +1,8 @@
-import { FETCH_SEATING, FETCH_BOOKING_SEATING } from "../Actions/ActionType";
+import {
+  FETCH_SEATING,
+  ADD_BOOKING_SEATING,
+  DELETE_BOOKING_SEATING
+} from "../Actions/ActionType";
 
 let initialState = {
   seatsOfShow: [],
@@ -11,8 +15,18 @@ const SeatingReducer = (state = initialState, action) => {
       state.seatsOfShow = action.payload;
       return { ...state };
 
-    case FETCH_BOOKING_SEATING:
-      return { ...state};
+    case ADD_BOOKING_SEATING:
+      state.bookingSeats.push(action.payload);
+      return { ...state };
+
+    case DELETE_BOOKING_SEATING:
+      const index = state.bookingSeats.findIndex(
+        e => e.maGhe === action.payload.maGhe
+      );
+      if (index !== -1) {
+        state.bookingSeats.splice(index, 1);
+      }
+      return { ...state };
 
     default:
       return { ...state };

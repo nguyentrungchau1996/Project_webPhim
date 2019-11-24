@@ -15,14 +15,14 @@ const BookingRight = props => {
   }, [dispatch, filmId]);
 
   const _renderShowTime = () =>
-    _.get(props, "detailedShow.LichChieu", []).map((showtime, index) => (
+    _.get(props, "detailedShow.lichChieu", []).map((showtime, index) => (
       <div className="card" key={index} showtime={showtime}>
         <div className="card-body">
           <span className="mr-4">
-            {moment(showtime.NgayChieuGioChieu).format("L")}
+            {moment(showtime.ngayChieuGioChieu).format("L")}
           </span>
-          <Link to={{pathname: `/seating/${showtime.MaLichChieu}`}} className="btn">
-            {moment(showtime.NgayChieuGioChieu).format("h:mm:ss a")}
+          <Link to={{pathname: `/seating/${showtime.maLichChieu}`}} className="btn">
+            {moment(showtime.ngayChieuGioChieu).format("h:mm:ss a")}
           </Link>
         </div>
       </div>

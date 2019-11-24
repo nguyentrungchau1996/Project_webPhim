@@ -5,7 +5,11 @@
     color: #CEA430;
     border: solid 1px #CEA430;
     cursor: pointer;
-    box-shadow: none;
+
+    &:focus {
+        box-shadow: none;
+        outline: none;
+    }
 }
 
 .btnGheDangDat {
