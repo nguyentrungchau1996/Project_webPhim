@@ -3,6 +3,7 @@ nav {
     z-index: 1000;
     width: 100%;
     top: 0;
+
     .myNavbar_left {
         .navbar-brand {
             img {
@@ -10,37 +11,47 @@ nav {
             }
         }
     }
+
     .myNavbar_right {
         .myNavbar_right_top {
             text-align: right;
             font-size: 13px;
+
             .btn_dangNhap {
                 color: rgba(0, 0, 0, .5);
                 text-decoration: none;
+
                 &:hover {
                     color: #CEA430;
                 }
             }
+
             .btn_changeLanguage {
                 a {
                     color: rgba(0, 0, 0, .5);
                     text-decoration: none;
+
                     &:hover {
                         color: #CEA430;
                     }
                 }
             }
         }
+
         .myNavbar_right_bottom {
+            margin-left: 7.5rem;
+
             #myNavbar {
                 .navbar-nav {
                     border-bottom: solid 2px #DDD;
+
                     .nav-item {
                         .nav-link {
                             padding: 13px 18px;
                             letter-spacing: 1px;
                             position: relative;
                             text-transform: uppercase;
+
                             &::before {
                                 position: absolute;
                                 left: 0;
@@ -50,6 +61,7 @@ nav {
                                 height: 2px;
                                 width: 0%;
                             }
+
                             &::after {
                                 position: absolute;
                                 content: "";
@@ -60,9 +72,11 @@ nav {
                                 right: 0;
                             }
                         }
+
                         &:hover {
                             .nav-link {
                                 color: #CEA430;
+
                                 &::before {
                                     width: 100%;
                                     transition: all 0.45s;
@@ -74,9 +88,11 @@ nav {
                             }
                         }
                     }
+
                     .nav_title_phim {
                         position: relative;
-                        .phim_overlay.scroller {                            
+
+                        .phim_overlay.scroller {
                             display: none;
                             position: absolute;
                             top: 3.25rem;
@@ -96,35 +112,42 @@ nav {
                             -moz-transition: all 0.5s;
                             -ms-transition: all 0.5s;
                             -o-transition: all 0.5s;
+
                             h5 {
                                 text-align: center;
                                 margin-top: 1rem;
                             }
+
                             .item_phim {
                                 .row {
                                     margin: 0;
+
                                     .col-4 {
                                         padding: 0 !important;
                                     }
                                 }
                             }
                         }
+
                         #scroller_style::-webkit-scrollbar-track {
                             box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
                             border-radius: 10px;
                             background-color: #F5F5F5;
                         }
+
                         #scroller_style::-webkit-scrollbar {
                             border-radius: 10px;
                             background-color: #F5F5F5;
                         }
+
                         #scroller_style::-webkit-scrollbar-thumb {
                             border-radius: 10px;
                             box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
                             background-color: #CEA430;
                         }
+
                         &:hover {
-                            .phim_overlay.scroller {                                
+                            .phim_overlay.scroller {
                                 display: block;
                                 transition: all 0.5s;
                                 -webkit-transition: all 0.5s;
@@ -133,6 +156,94 @@ nav {
                                 -o-transition: all 0.5s;
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1680px) and (min-width: 1441px) {}
+
+@media (max-width: 1440px) and (min-width: 1367px) {}
+
+@media (max-width: 1366px) and (min-width: 1201px) {}
+
+@media (max-width: 1200px) and (min-width: 993px) {
+    nav {
+        .myNavbar_right {
+            .myNavbar_right_bottom {
+                margin-left: 4rem;
+                font-size: 0.75rem;
+                .navbar-nav {
+                    .nav_title_phim {
+                        .phim_overlay.scroller {
+                            top: 2.6rem !important;
+                            width: 38rem !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) and (min-width: 769px) {
+    nav {
+        .myNavbar_right {
+            .myNavbar_right_bottom {
+                margin-left: 0 !important;
+                font-size: 0.75rem !important;
+                .navbar-nav {
+                    .nav_title_phim {
+                        .phim_overlay.scroller {
+                            top: 2.7rem !important;
+                            width: 38rem !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) and (min-width: 577px) {
+    nav {
+        .myNavbar_right {
+            .myNavbar_right_bottom {
+                margin-left: 0;
+                font-size: 0.75rem;
+                .navbar-nav {
+                    .nav_title_phim {
+                        .phim_overlay.scroller {
+                            top: 4rem !important;
+                            left: -11rem !important;
+                            width: 34rem !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    nav {
+        .myNavbar_right {
+            .myNavbar_right_bottom {
+                flex: 0 0 58.333333% !important;
+                max-width: 58.333333% !important;
+                margin-left: 21rem;
+                font-size: 1rem;
+                text-align: right;
+                .navbar-nav {
+                    .nav_title_phim {
+                        &:hover {
+                            .phim_overlay.scroller {
+                                display: none !important;                          
+                            }    
+                        }  
+                        
                     }
                 }
             }

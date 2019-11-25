@@ -115,15 +115,15 @@
                         -o-transition: all 0.3s;
                     }
                     button.btnThongTin {
-                        left: 9.5rem;
+                        left: 26%;
                         &:hover {
-                            left: 9.5rem;
+                            left: 26%;
                         }
                     }
                     button.btnLichChieu {
-                        right: 9.5rem;
+                        right: 26%;
                         &:hover {
-                            right: 9.5rem;
+                            right: 26%;
                         }
                     }
                     h4 {
@@ -155,3 +155,84 @@
         }
     }
 }
+
+@media (max-width: 1680px) and (min-width: 1441px) {
+
+}
+
+@media (max-width: 1440px) and (min-width: 1367px) {
+
+}
+
+@media (max-width: 1366px) and (min-width: 1201px) {
+
+}
+
+@media (max-width: 1200px) and (min-width: 993px) {
+
+}
+
+@media (max-width: 992px) and (min-width: 769px) {
+    .detailed_show {
+        .row {
+            .col-7 {
+                .row {
+                    .col-12 {
+                        button.btnThongTin {
+                            left: 22% !important;
+                            &:hover {
+                                left: 22% !important;
+                            }
+                        }
+                        button.btnLichChieu {
+                            right: 19% !important;
+                            &:hover {
+                                right: 19% !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) and (min-width: 577px) {
+    .detailed_show {
+        .row {
+            .col-5 {
+                img {
+                    width: auto !important;
+                    height: 24rem !important;
+                }
+                .img_overlay {
+                    width: 81% !important;
+                }
+            }
+            .col-7 {
+                height: 24rem !important;
+                .row {
+                    .col-12 {
+                        button.btnThongTin {
+                            left: 11% !important;
+                            &:hover {
+                                left: 11% !important;
+                            }
+                        }
+                        button.btnLichChieu {
+                            right: 7% !important;
+                            &:hover {
+                                right: 7% !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+
+}
+

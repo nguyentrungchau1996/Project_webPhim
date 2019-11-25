@@ -5,6 +5,7 @@ import {
   deleteBookingSeat,
   addBookingSeat
 } from "../../../Redux/Actions/Seating";
+import _ from "lodash";
 
 const SeatingItem = props => {
   const [state, setState] = useState({
@@ -20,10 +21,10 @@ const SeatingItem = props => {
       ...state,
       bookingStatus: !state.bookingStatus
     });
+    const seatitem = _.get(props, "seatitem", {});
     if (!state.bookingStatus) {
-      dispatch(addBookingSeat(props.seatitem));
-    } else dispatch(deleteBookingSeat(props.seatitem));
-    console.log(props.bookingSeats);
+      dispatch(addBookingSeat(seatitem));
+    } else dispatch(deleteBookingSeat(seatitem));
   };
 
   return (
@@ -59,6 +60,6 @@ const SeatingItem = props => {
 
 const mapStateToProps = state => ({
   bookingSeats: state.seating.bookingSeats
-})
+});
 
 export default connect(mapStateToProps)(SeatingItem);

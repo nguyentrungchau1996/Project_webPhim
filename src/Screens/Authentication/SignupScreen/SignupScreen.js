@@ -42,9 +42,9 @@ const SignupScreen = props => {
                     name="taiKhoan"
                     placeholder="User name"
                   />
-                  {errors.taiKhoan && touched.taiKhoan && (
-                    <p className="alert alert-danger">{errors.taiKhoan}</p>
-                  )}
+                  <p className="alert alert-danger">
+                    {errors.taiKhoan && touched.taiKhoan && `${errors.taiKhoan}`}
+                  </p>                  
                 </div>
                 <div className="form-group">
                   <div className="form_overlay">
@@ -58,9 +58,9 @@ const SignupScreen = props => {
                     name="matKhau"
                     placeholder="Password"
                   />
-                  {errors.matKhau && touched.matKhau && (
-                    <p className="alert alert-danger">{errors.matKhau}</p>
-                  )}
+                  <p className="alert alert-danger">
+                    {errors.matKhau && touched.matKhau && `${errors.matKhau}`}
+                  </p>
                 </div>
                 <div className="form-group">
                   <div className="form_overlay">
@@ -74,9 +74,9 @@ const SignupScreen = props => {
                     name="hoTen"
                     placeholder="Full name"
                   />
-                  {errors.hoTen && touched.hoTen && (
-                    <p className="alert alert-danger">{errors.hoTen}</p>
-                  )}
+                  <p className="alert alert-danger">
+                    {errors.hoTen && touched.hoTen && `${errors.hoTen}`}
+                  </p>
                 </div>
                 <div className="form-group">
                   <div className="form_overlay">
@@ -90,9 +90,9 @@ const SignupScreen = props => {
                     name="email"
                     placeholder="Email"
                   />
-                  {errors.email && touched.email && (
-                    <p className="alert alert-danger">{errors.email}</p>
-                  )}
+                  <p className="alert alert-danger">
+                    {errors.email && touched.email && `${errors.email}`}
+                  </p>
                 </div>
                 <div className="form-group">
                   <div className="form_overlay">
@@ -106,9 +106,9 @@ const SignupScreen = props => {
                     name="soDt"
                     placeholder="Phone number"
                   />
-                  {errors.soDt && touched.soDt && (
-                    <p className="alert alert-danger">{errors.soDt}</p>
-                  )}
+                  <p className="alert alert-danger">
+                    {errors.soDt && touched.soDt && `${errors.soDt}`}
+                  </p>
                 </div>
                 <div className="form-group mx-auto text-center form_button">
                   <button className="btn btn-success" type="submit">

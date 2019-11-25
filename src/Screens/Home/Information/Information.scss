@@ -14,8 +14,10 @@ section{
             -ms-transition: all 0.3s;
             -o-transition: all 0.3s;
             padding: 0.5rem;
-            box-shadow: none;
+            box-shadow: none;            
             &:hover {
+                outline: none;
+                box-shadow: none;   
                 position: absolute;
                 bottom: -1rem;
                 font-size: 2rem;
@@ -39,24 +41,128 @@ section{
             -o-transition: all 0.3s;
         }
         .btnNews {
-            left: 40rem;
+            left: 38%;
             &:hover {
-                left: 40rem;
+                left: 38%;
             }
         }
         .btnReview {
-            left: 49rem;
+            left: 46%;
             
             &:hover {
-                left: 49rem;
+                left: 46%;
                 
             }
         }
         .btnPromotion {
-            right: 38rem;
+            right: 35.5%;
             &:hover {
-                right: 38rem;
+                right: 35.5%;
             }
         }
     }    
 }
+
+@media (max-width: 1680px) and (min-width: 1441px) {
+
+}
+
+@media (max-width: 1440px) and (min-width: 1367px) {
+    
+}
+
+@media (max-width: 1366px) and (min-width: 1201px) {
+    section {
+        div {
+            .btnPromotion {
+                right: 32% !important;
+                &:hover {
+                    right: 32% !important;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 993px) {
+    section {
+        div {
+            .btnNews {
+                left: 35% !important;
+                &:hover {
+                    left: 35% !important;
+                }
+            }
+            .btnReview {
+                left: 45% !important;
+                &:hover {
+                    left: 45% !important;
+                }
+            }
+
+            .btnPromotion {
+                right: 31% !important;
+                &:hover {
+                    right: 31% !important;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) and (min-width: 769px) {
+    section {
+        div {
+            .btnNews {
+                left: 31% !important;
+                &:hover {
+                    left: 31% !important;
+                }
+            }
+            .btnReview {
+                left: 45% !important;
+                &:hover {
+                    left: 45% !important;
+                }
+            }
+
+            .btnPromotion {
+                right: 25% !important;
+                &:hover {
+                    right: 25% !important;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) and (min-width: 577px) {
+    section {
+        div {
+            .btnNews {
+                left: 26% !important;
+                &:hover {
+                    left: 26% !important;
+                }
+            }
+            .btnReview {
+                left: 42% !important;
+                &:hover {
+                    left: 42% !important;
+                }
+            }
+
+            .btnPromotion {
+                right: 19% !important;
+                &:hover {
+                    right: 19% !important;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+
+}
+

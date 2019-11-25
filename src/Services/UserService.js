@@ -22,6 +22,11 @@ export const userSignupSchema = yup.object().shape({
     .matches(/^[0-9]*$/)
 });
 
+export const userSigninSchema = yup.object().shape({
+  taiKhoan: yup.string().required("Please enter username!"),
+  matKhau: yup.string().required("Please enter password!")
+});
+
 class UserService {
   signup(user) {
     return restConnector({

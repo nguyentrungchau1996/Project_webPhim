@@ -23,7 +23,7 @@ const Header = props => {
   return (
     <nav className="navbar navbar-expand-md bg-light navbar-light">
       <div className="container">
-        <div className="col-5 myNavbar_left">
+        <div className="col-4 myNavbar_left">
           {/* Brand */}
           <Link to={{ pathname: "/" }} className="navbar-brand">
             <img src="../../img/logoCyberSoft.png" alt="logoCyberSoft" />
@@ -38,7 +38,7 @@ const Header = props => {
         >
           <span className="navbar-toggler-icon" />
         </button>
-        <div className="col-7 myNavbar_right">
+        <div className="col-8 myNavbar_right">
           {/* Navbar links */}
           <div className="row">
             <div className="col-12 myNavbar_right_top pr-4">

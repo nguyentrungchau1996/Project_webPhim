@@ -5,7 +5,7 @@ import Footer from "../../Layouts/Footer/Footer";
 import SeatingItem from "./SeatingItem/SeatingItem";
 import { connect, useDispatch } from "react-redux";
 import _ from "lodash";
-import { fetchSeating, fetchBookingSeat } from "../../Redux/Actions/Seating";
+import { fetchSeating } from "../../Redux/Actions/Seating";
 import BookingSeat from "./BookingSeat/BookingSeat";
 
 const SeatingScreen = props => {
@@ -24,8 +24,6 @@ const SeatingScreen = props => {
         </div>
       );
     });
-
-  // useEffect(() => console.log(props.bookingSeats), [props.bookingSeats]);
 
   return (
     <>
@@ -61,6 +59,7 @@ const SeatingScreen = props => {
           <div className="col-md-4 mx-auto">
             <h1 className="display-4 text-center">Ghế đã chọn</h1>
             <BookingSeat />
+            <h2 className="display-4 text-center">Tổng cộng: tongTien VNĐ</h2>
           </div>
         </div>
       </div>
@@ -71,8 +70,7 @@ const SeatingScreen = props => {
 };
 
 const mapStateToProps = state => ({
-  seatsOfShow: state.seating.seatsOfShow,
-  bookingSeats: state.seating.bookingSeats
+  seatsOfShow: state.seating.seatsOfShow
 });
 
 export default connect(mapStateToProps)(SeatingScreen);

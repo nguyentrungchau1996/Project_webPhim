@@ -44,4 +44,4 @@ export const actAddBookingSeat = data => ({
 export const actDeleteBookingSeat = data => ({
   type: DELETE_BOOKING_SEATING,
   payload: data
-})
+});

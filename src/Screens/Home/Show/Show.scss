@@ -37,15 +37,109 @@
         -o-transition: all 0.3s;
     }
     button.btnPhimDangChieu {
-        left: 42rem;
+        left: 39%;
         &:hover {
-            left: 42rem;
+            left: 39%;
         }
     }
     button.btnPhimSapChieu {
-        right: 44rem;
+        right: 40.5%;
         &:hover {
-            right: 44rem;
+            right: 40.5%;
         }
     }
 }
+
+@media (max-width: 1680px) and (min-width: 1441px) {
+
+}
+
+@media (max-width: 1440px) and (min-width: 1367px) {
+    .col-12 {
+        button.btnPhimDangChieu {
+            left: 37% !important;
+            &:hover {
+                left: 37% !important;
+            }
+        }
+        button.btnPhimSapChieu {
+            right: 38.5% !important;
+            &:hover {
+                right: 38.5% !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 1366px) and (min-width: 1201px) {
+    .col-12 {
+        button.btnPhimDangChieu {
+            left: 36.5% !important;
+            &:hover {
+                left: 36.5% !important;
+            }
+        }
+        button.btnPhimSapChieu {
+            right: 38% !important;
+            &:hover {
+                right: 38% !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 993px) {
+    .col-12 {
+        button.btnPhimDangChieu {
+            left: 35% !important;
+            &:hover {
+                left: 35% !important;
+            }
+        }
+        button.btnPhimSapChieu {
+            right: 36.5% !important;
+            &:hover {
+                right: 36.5% !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) and (min-width: 769px) {
+    .col-12 {
+        button.btnPhimDangChieu {
+            left: 32% !important;
+            &:hover {
+                left: 32% !important;
+            }
+        }
+        button.btnPhimSapChieu {
+            right: 32% !important;
+            &:hover {
+                right: 32% !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) and (min-width: 577px) {
+    .col-12 {
+        button.btnPhimDangChieu {
+            left: 28% !important;
+            &:hover {
+                left: 28% !important;
+            }
+        }
+        button.btnPhimSapChieu {
+            right: 28% !important;
+            &:hover {
+                right: 28% !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+
+}
+

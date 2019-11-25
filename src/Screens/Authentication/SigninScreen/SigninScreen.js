@@ -1,24 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import "./SigninScreen.scss";
 import { signin } from "../../../Redux/Actions/User";
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
+import { Formik, Form, Field } from "formik";
+import { userSigninSchema } from "../../../Services/UserService";
 
 const SigninScreen = props => {
-  const [state, setState] = useState({
-    taiKhoan: "",
-    matKhau: ""
-  });
+  const dispatch = useDispatch();
 
-  const _handleChange = e => {
-    setState({
-      ...state,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const _handleSubmit = e => {
-    e.preventDefault();
-    props.dispatch(signin(state, props.history));
+  const _handleSubmit = values => {
+    dispatch(signin(values, props.history));
   };
 
   return (
@@ -28,41 +19,58 @@ const SigninScreen = props => {
           account login
         </h1>
         <div className="col-3 mx-auto">
-          <form onSubmit={_handleSubmit}>
-            <div className="form-group">
-              <input
-                type="text"
-                className="form-control"
-                id="user_name"
-                name="taiKhoan"
-                onChange={_handleChange}
-                placeholder="User name"
-                required
-              />
-              <div className="form_overlay">
-                <i className="fa fa-user" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div className="form-group">
-              <input
-                type="password"
-                className="form-control"
-                id="password"
-                name="matKhau"
-                onChange={_handleChange}
-                placeholder="Password"
-                required
-              />
-              <div className="form_overlay">
-                <i className="fa fa-lock" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div className="form-group mx-auto text-center form_button">
-              <button className="btn btn-success" type="submit">
-                login
-              </button>
-            </div>
-          </form>
+          <Formik
+            initialValues={{
+              taiKhoan: "",
+              matKhau: ""
+            }}
+            validationSchema={userSigninSchema}
+            onSubmit={_handleSubmit}
+          >
+            {({ handleChange, errors, touched }) => (
+              <Form>
+                <div className="form-group">
+                  <div className="form_overlay">
+                    <i className="fa fa-user" aria-hidden="true"></i>
+                  </div>
+                  <Field
+                    type="text"
+                    className="form-control"
+                    id="user_name"
+                    name="taiKhoan"
+                    onChange={handleChange}
+                    placeholder="User name"
+                  />
+                  <p className="alert alert-danger">
+                    {errors.taiKhoan &&
+                      touched.taiKhoan &&
+                      `${errors.taiKhoan}`}
+                  </p>
+                </div>
+                <div className="form-group">
+                  <div className="form_overlay">
+                    <i className="fa fa-lock" aria-hidden="true"></i>
+                  </div>
+                  <Field
+                    type="password"
+                    className="form-control"
+                    id="password"
+                    name="matKhau"
+                    onChange={handleChange}
+                    placeholder="Password"
+                  />
+                  <p className="alert alert-danger">
+                    {errors.matKhau && touched.matKhau && `${errors.matKhau}`}
+                  </p>
+                </div>
+                <div className="form-group mx-auto text-center form_button">
+                  <button className="btn btn-success" type="submit">
+                    login
+                  </button>
+                </div>
+              </Form>
+            )}
+          </Formik>
         </div>
       </div>
     </div>

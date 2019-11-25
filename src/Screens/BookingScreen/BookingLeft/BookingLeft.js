@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 //Component trả ra danh sách phim đang chiếu
 const BookingLeft = props => {
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     dispatch(fetchShow());
   }, [dispatch]);

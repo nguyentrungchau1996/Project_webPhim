@@ -34,6 +34,7 @@
             -moz-transition: all 0.4s;
             transition: all 0.4s;
             -ms-transition: all 0.4s;
+            margin-bottom: 0 !important;
 
             .form_overlay {
                 height: 0.25rem;
@@ -63,12 +64,12 @@
                 i {
                     position: absolute;
                     font-size: 1.5rem;
-                    bottom: 1rem;
+                    bottom: -2rem;
                     left: 1rem;
                 }
             }
 
-            input {
+            .form-control {
                 font-size: 20px;
                 color: #555555;
                 line-height: 1.2;
@@ -105,6 +106,16 @@
                 }
             }
 
+            .alert {
+                height: 1.75rem;
+                padding: 0 !important;
+                margin: 0 !important;
+                background: transparent;
+                border: transparent;
+                font-size: 1rem;
+                padding-left: 0.5rem !important;
+            }
+
             .btn {
                 position: relative;
                 border: solid 3px #CEA430;
@@ -131,8 +142,83 @@
         }
 
         .form_button {
-            margin-top: 2rem;
+            margin-top: 1rem;
             margin-bottom: 0.75rem;
         }
     }
 }
+
+@media (max-width: 1680px) and (min-width: 1441px) {}
+
+@media (max-width: 1440px) and (min-width: 1367px) {
+    .signin_screen {
+        .signin_screen_title {
+            left: 38% !important;
+        }
+    }
+}
+
+@media (max-width: 1366px) and (min-width: 1201px) {
+    .signin_screen {
+        .signin_screen_title {
+            left: 37% !important;
+        }
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 993px) {
+    .signin_screen {
+        .signin_screen_title {
+            left: 35.5% !important;
+        }
+    }
+}
+
+@media (max-width: 992px) and (min-width: 769px) {
+    .signin_screen {
+        .signin_screen_title {
+            left: 32% !important;
+        }
+        .col-3 {
+            padding: 1rem 0.5rem !important;
+            .form-group {
+                .form_overlay {
+                    i {
+                        font-size: 1rem !important;
+                    }
+                }
+                .form-control {
+                    padding: 0 10px 4px 48px !important;
+                    font-size: 1rem !important;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) and (min-width: 577px) {
+    .signin_screen {
+        .signin_screen_title {
+            left: 27.5% !important;
+        }
+        .col-3 {
+            padding: 1rem 0.5rem !important;
+            .form-group {                
+                .form_overlay {
+                    i {
+                        font-size: 1rem !important;
+                    }
+                }
+                .form-control {
+                    padding: 0 10px 4px 48px !important;
+                    font-size: 1rem !important;
+                }
+                .alert {
+                    font-size: 0.75rem !important;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {}
