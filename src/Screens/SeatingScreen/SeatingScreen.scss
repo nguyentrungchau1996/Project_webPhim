@@ -20,6 +20,7 @@
                 background-color: #CEA430;
                 padding-bottom: 0.75rem;
                 margin-bottom: 7rem;
+                font-size: 2.5rem;
             }
             .notes {
                 margin-top: 2rem;
@@ -62,6 +63,41 @@
                 color: #ffffff;
                 background-color: #CEA430;
                 padding-bottom: 0.75rem;
+                font-size: 2.5rem;                
+            }
+            h2 {
+                font-size: 2rem;
+                position: absolute;
+                bottom: 10%;
+                padding-bottom: 1.25rem;
+            }
+            .btnFooter {
+                position: absolute;
+                bottom: 2%;
+                margin: auto;
+                width: 100%;                
+                text-align: center;
+                .btnDatVe {
+                    position: relative;
+                    border: solid 3px #CEA430;
+                    color: #CEA430;
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    background-color: #ffffff;
+                    box-shadow: 2px 2px 0px #CEA430;
+                    transition: none;
+                    -webkit-transition: none;
+                    -moz-transition: none;
+                    -ms-transition: none;
+                    -o-transition: none;
+                    padding: 0.5rem 1rem;
+
+                    &:hover {
+                        top: 3px;
+                        left: 3px;
+                        box-shadow: 3px 3px 0px transparent;
+                    }
+                }
             }
         }
     }

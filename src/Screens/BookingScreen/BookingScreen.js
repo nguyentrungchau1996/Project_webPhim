@@ -4,6 +4,7 @@ import Header from "../../Layouts/Header/Header";
 import Footer from "../../Layouts/Footer/Footer";
 import BookingLeft from "./BookingLeft/BookingLeft";
 import BookingRight from "./BookingRight/BookingRight";
+import { connect } from "react-redux";
 
 const BookingScreen = props => {
   const filmId = props.match.params.filmId;
@@ -30,6 +31,7 @@ const BookingScreen = props => {
                 <h5>chọn suất</h5>
               </div>
               <div className="card-body">
+                <p>Tên phim: {props.detailedShow.tenPhim}</p>
                 {filmId ? (
                   <BookingRight filmId={filmId} />
                 ) : (
@@ -46,4 +48,8 @@ const BookingScreen = props => {
   );
 };
 
-export default BookingScreen;
+const mapStateToProps = state => ({
+  detailedShow: state.cinema.detailedShow
+});
+
+export default connect(mapStateToProps)(BookingScreen);

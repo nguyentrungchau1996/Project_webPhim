@@ -20,7 +20,7 @@ const BookingLeft = props => {
           <div className="col-4">
             <div className="img">
               <img src={show.hinhAnh} alt="booking_left" />
-              <a href="#">
+              <a href="/">
                 <i className="fa fa-play-circle-o text-white" />
               </a>
               <div className="img_overlay"></div>
@@ -52,7 +52,8 @@ const BookingLeft = props => {
 
 const mapStateToProps = state => {
   return {
-    show: state.cinema.show
+    show: state.cinema.show,
+    detailedShow: state.cinema.detailedShow
   };
 };
 

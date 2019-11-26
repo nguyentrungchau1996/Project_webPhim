@@ -4,6 +4,7 @@ import { signin } from "../../../Redux/Actions/User";
 import { connect, useDispatch } from "react-redux";
 import { Formik, Form, Field } from "formik";
 import { userSigninSchema } from "../../../Services/UserService";
+import { Link } from "react-router-dom";
 
 const SigninScreen = props => {
   const dispatch = useDispatch();
@@ -71,6 +72,10 @@ const SigninScreen = props => {
               </Form>
             )}
           </Formik>
+          <p>
+            You don't have an account?{" "}
+            <Link to={{ pathname: "/signup" }}>Sign up</Link>
+          </p>
         </div>
       </div>
     </div>

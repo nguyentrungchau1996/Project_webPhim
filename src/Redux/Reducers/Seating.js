@@ -16,20 +16,19 @@ const SeatingReducer = (state = initialState, action) => {
       return { ...state };
 
     case ADD_BOOKING_SEATING:
-      state.bookingSeats.push(action.payload);
+      state.bookingSeats = [...state.bookingSeats, action.payload];
       return { ...state };
 
     case DELETE_BOOKING_SEATING:
-      const index = state.bookingSeats.findIndex(
-        e => e.maGhe === action.payload.maGhe
+      let temp_bookingSeats = [...state.bookingSeats];
+      temp_bookingSeats = temp_bookingSeats.filter(
+        seat => seat.maGhe !== action.payload.maGhe
       );
-      if (index !== -1) {
-        state.bookingSeats.splice(index, 1);
-      }
+      state.bookingSeats = temp_bookingSeats;
       return { ...state };
 
     default:
-      return {...state};
+      return { ...state };
   }
 };
 

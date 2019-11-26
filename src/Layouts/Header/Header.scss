@@ -16,6 +16,15 @@ nav {
         .myNavbar_right_top {
             text-align: right;
             font-size: 13px;
+            p {
+                font-size: 0.8rem;
+                span {
+                    &:hover {
+                        cursor: pointer;
+                        text-decoration: underline;
+                    }
+                }                
+            }
 
             .btn_dangNhap {
                 color: rgba(0, 0, 0, .5);
@@ -112,6 +121,25 @@ nav {
                             -moz-transition: all 0.5s;
                             -ms-transition: all 0.5s;
                             -o-transition: all 0.5s;
+                            .form-group {
+                                position: relative;
+                                margin: auto;
+                                width: 90%;
+                                padding: 1rem 0 1.5rem;
+                                .form-control {
+                                    &:focus {
+                                        outline: none;
+                                        box-shadow: none;
+                                        border-color: #ced4da !important;
+                                    }
+                                }
+                                .btn-search {
+                                    position: absolute;
+                                    right: 0.25%;
+                                    top: 22%;
+                                    border: none;                                    
+                                }                                
+                            }
 
                             h5 {
                                 text-align: center;

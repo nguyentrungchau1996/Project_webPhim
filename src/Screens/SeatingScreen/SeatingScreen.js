@@ -7,6 +7,7 @@ import { connect, useDispatch } from "react-redux";
 import _ from "lodash";
 import { fetchSeating } from "../../Redux/Actions/Seating";
 import BookingSeat from "./BookingSeat/BookingSeat";
+import {Link} from "react-router-dom";
 
 const SeatingScreen = props => {
   const dispatch = useDispatch();
@@ -24,6 +25,12 @@ const SeatingScreen = props => {
         </div>
       );
     });
+
+  const _handleOnBooking = () => {
+    let bookedSeats = _.get(props, "bookingSeats", []);
+    localStorage.setItem("bookedSeats", JSON.stringify(bookedSeats));
+    props.history.push("/");
+  };
 
   return (
     <>
@@ -59,7 +66,14 @@ const SeatingScreen = props => {
           <div className="col-md-4 mx-auto">
             <h1 className="display-4 text-center">Ghế đã chọn</h1>
             <BookingSeat />
-            <h2 className="display-4 text-center">Tổng cộng: tongTien VNĐ</h2>
+            <h2 className="display-4 text-center">
+              Tổng cộng: {props.bookingSeats.length * 75000} VNĐ
+            </h2>
+            <div className="btnFooter">
+              <Link to={{pathname: "/"}} className="btn btnDatVe" onClick={_handleOnBooking}>
+                Đặt vé
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -70,7 +84,8 @@ const SeatingScreen = props => {
 };
 
 const mapStateToProps = state => ({
-  seatsOfShow: state.seating.seatsOfShow
+  seatsOfShow: state.seating.seatsOfShow,
+  bookingSeats: state.seating.bookingSeats
 });
 
 export default connect(mapStateToProps)(SeatingScreen);

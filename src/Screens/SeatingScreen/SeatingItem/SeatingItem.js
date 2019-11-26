@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./SeatingItem.scss";
 import { connect, useDispatch } from "react-redux";
 import {
@@ -16,15 +16,31 @@ const SeatingItem = props => {
 
   const dispatch = useDispatch();
 
+  const btnClass = ["btn", "btnGhe"];
+
   const _handleSeating = () => {
     setState({
       ...state,
       bookingStatus: !state.bookingStatus
     });
+    
     const seatitem = _.get(props, "seatitem", {});
+
     if (!state.bookingStatus) {
       dispatch(addBookingSeat(seatitem));
-    } else dispatch(deleteBookingSeat(seatitem));
+    } else {
+      dispatch(deleteBookingSeat(seatitem));
+      btnClass.push("");
+    }
+  };
+
+  //Kiểm tra ghế còn tồn tại trên store ko? Nếu không <-> false
+  const checkBookingSeat = maGhe => {
+    const index = _.get(props, "bookingSeats", []).findIndex(
+      seat => seat.maGhe === maGhe
+    );
+    if (index === -1) return false;
+    return true;
   };
 
   return (
@@ -35,7 +51,7 @@ const SeatingItem = props => {
         </button>
       ) : (
         <div>
-          {state.bookingStatus ? (
+          {state.bookingStatus && checkBookingSeat(props.seatitem.maGhe) ? (
             <button
               type="button"
               className="btnGhe btn btnGheDangDat"

@@ -5,7 +5,6 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import BookingScreen from "../Screens/BookingScreen/BookingScreen";
 import SeatingScreen from "../Screens/SeatingScreen/SeatingScreen";
 import SignupScreen from "../Screens/Authentication/SignupScreen/SignupScreen";
-import { Demo } from "../demos/Demo";
 import SigninScreen from "../Screens/Authentication/SigninScreen/SigninScreen";
 import { restConnector } from "../Services";
 import { connect, useDispatch } from "react-redux";
@@ -36,7 +35,7 @@ const Layout = () => {
         <Auth path="/seating/:showId" component={SeatingScreen} />
         <Route path="/signup" component={SignupScreen} />
         <Route path="/signin" component={SigninScreen} />
-        <Route path="/admin" component={AdminScreen} />
+        <Auth path="/admin" component={AdminScreen} />
         <Route path="/" component={Home} />
       </Switch>
     </BrowserRouter>

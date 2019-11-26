@@ -66,6 +66,7 @@
                     }
 
                     .img_overlay {
+                        left: 0;
                         transform: translate(0, 0);
                         -webkit-transform: translate(0, 0);
                         -moz-transform: translate(0, 0);
@@ -109,7 +110,15 @@
                         left: 2px;
                         box-shadow: 2px 2px 0px transparent;
                     }
-                }                
+                }
+
+                .btnActive {
+                    top: 2px;
+                    left: 2px;
+                    box-shadow: 2px 2px 0px transparent;
+                    background: #CEA430;
+                    color: #ffffff;                    
+                }
             }
         }
     }
@@ -150,17 +159,20 @@
                     img {
                         height: 7rem !important;
                     }
+
                     a {
                         top: 32% !important;
                         left: 30% !important;
-                    }                    
+                    }
                 }
             }
+
             .col-8 {
                 p {
                     padding: 0 !important;
                     font-size: 1rem !important;
                 }
+
                 div {
                     .btn {
                         font-size: 0.75rem !important;

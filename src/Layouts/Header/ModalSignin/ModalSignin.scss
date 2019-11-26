@@ -1,0 +1,21 @@
+.btnLogout {
+    position: relative;
+    border: solid 3px #CEA430;
+    color: #CEA430;
+    font-size: 1.25rem;
+    font-weight: 600;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 0px #CEA430;
+    transition: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    padding: 0.25rem 0.5rem;
+
+    &:hover {
+        top: 2px;
+        left: 2px;
+        box-shadow: 3px 3px 0px transparent;
+    }
+}

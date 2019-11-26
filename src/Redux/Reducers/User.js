@@ -4,7 +4,9 @@ import {
   ADD_USER,
   DELETE_USER,
   UPDATE_USER,
-  SAVE_EDIT_USER
+  SAVE_EDIT_USER,
+  SEARCH_USER,
+  LOG_OUT_USER
 } from "../Actions/ActionType";
 
 let initialState = {
@@ -19,7 +21,8 @@ let initialState = {
     soDt: "",
     maNhom: "GP03",
     maLoaiNguoiDung: ""
-  }
+  },
+  searchUserList: []
 };
 
 const UserReducer = (state = initialState, action) => {
@@ -35,14 +38,16 @@ const UserReducer = (state = initialState, action) => {
 
     case ADD_USER:
       //payload ở đây là newUser
-      state.listOfUsers.push(action.payload);
+      state.listOfUsers = [...state.listOfUsers, action.payload];
       return { ...state };
 
     case DELETE_USER:
-      index = state.listOfUsers.findIndex(e => e.taiKhoan === action.taiKhoan);
+      let temp_listOfUsers = [...state.listOfUsers];
+      index = temp_listOfUsers.findIndex(e => e.taiKhoan === action.taiKhoan);
       if (index !== -1) {
         state.listOfUsers.splice(index, 1);
       }
+      state.listOfUsers = temp_listOfUsers;
       return { ...state };
 
     case UPDATE_USER:
@@ -57,6 +62,21 @@ const UserReducer = (state = initialState, action) => {
     //Lưu thằng muốn update lên storeReducer
     case SAVE_EDIT_USER:
       state.editUser = action.payload;
+      return { ...state };
+
+    case SEARCH_USER:
+      let temp_searchUserList = [...state.listOfUsers];
+      temp_searchUserList = state.listOfUsers.filter(
+        user =>
+          user.hoTen.toLowerCase().indexOf(action.payload.toLowerCase()) !== -1
+      );
+      state.searchUserList = temp_searchUserList;
+      return { ...state };
+
+    case LOG_OUT_USER:
+      let temp_credentials = { ...state.credentials };
+      temp_credentials = null;
+      state.credentials = temp_credentials;
       return { ...state };
 
     default:

@@ -2,30 +2,10 @@ import React, { useRef } from "react";
 import "./ModalScreen.scss";
 import { Formik, Form, Field } from "formik";
 import { userSignupSchema } from "../../../Services/UserService";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
 import { connect, useDispatch } from "react-redux";
 import { addUser, updateUser } from "../../../Redux/Actions/User";
 
 const ModalScreen = props => {
-  const MySwal = withReactContent(Swal);
-
-  const _handleOnModal = () => {
-    MySwal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!"
-    }).then(result => {
-      if (result.value) {
-        Swal.fire("Deleted!", "Your file has been deleted.", "success");
-      }
-    });
-  };
-
   const dispatch = useDispatch();
 
   const temp_editStatus = props.editStatus;
@@ -67,13 +47,23 @@ const ModalScreen = props => {
           </div>
           <div className="modal-body">
             <Formik
-              initialValues={props.editUser}
+              initialValues={
+                temp_editStatus
+                  ? props.editUser
+                  : {
+                      taiKhoan: "",
+                      matKhau: "",
+                      hoTen: "",
+                      email: "",
+                      soDt: "",
+                      maNhom: "GP03",
+                      maLoaiNguoiDung: ""
+                    }
+              }
               validationSchema={userSignupSchema}
               onSubmit={_handleSubmit}
             >
               {({ handleChange, errors, touched, values }) => {
-                const temp_editUser = { ...props.editUser };
-                
                 return (
                   <Form>
                     <div className="form-group">
@@ -86,7 +76,7 @@ const ModalScreen = props => {
                         className="form-control"
                         name="taiKhoan"
                         placeholder="User name"
-                        value={temp_editUser.taiKhoan}
+                        value={values.taiKhoan}
                         onChange={handleChange}
                       />
                       {errors.taiKhoan && touched.taiKhoan && (

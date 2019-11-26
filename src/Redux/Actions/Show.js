@@ -1,4 +1,8 @@
-import { FETCH_SHOW, FETCH_DETAILED_SHOW } from "./ActionType";
+import {
+  FETCH_SHOW,
+  FETCH_DETAILED_SHOW,
+  SEARCHING_FILM
+} from "./ActionType";
 import CinemaService from "../../Services/CinemaService";
 
 //async action
@@ -21,6 +25,10 @@ export const fetchDetailedShow = filmId => {
   };
 };
 
+export const searchFilm = keywordSearch => {
+  return dispatch => dispatch(actSearchingFilm(keywordSearch));
+};
+
 //action creators
 export const actFetchShow = data => ({
   type: FETCH_SHOW,
@@ -29,5 +37,10 @@ export const actFetchShow = data => ({
 
 export const actFetchDetailedShow = data => ({
   type: FETCH_DETAILED_SHOW,
+  payload: data
+});
+
+export const actSearchingFilm = data => ({
+  type: SEARCHING_FILM,
   payload: data
 });

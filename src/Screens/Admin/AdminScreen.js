@@ -1,19 +1,23 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./AdminScreen.scss";
 import { connect, useDispatch } from "react-redux";
 import {
   fetchListOfUsers,
   deleteUser,
-  saveEditUser
+  saveEditUser,
+  searchUser
 } from "../../Redux/Actions/User";
 import ModalScreen from "./ModalScreen/ModalScreen";
 import { changeEditStatus } from "../../Redux/Actions/Status";
 
 const AdminScreen = props => {
-  const dispatch = useDispatch();
-  const temp_listOfUsers = props.listOfUsers;
+  const [state, setState] = useState({
+    search: ""
+  });
 
-  useEffect(() => dispatch(fetchListOfUsers()), [temp_listOfUsers, dispatch]);
+  const dispatch = useDispatch();
+
+  useEffect(() => dispatch(fetchListOfUsers()), [dispatch]);
 
   //Nhất nút delete tiến hành xóa user
   const _handleDeleteUser = username => {
@@ -31,7 +35,42 @@ const AdminScreen = props => {
   };
 
   const _renderListOfUsers = () =>
-    temp_listOfUsers.map((user, index) => (
+    props.listOfUsers.map((user, index) => (
+      <tr key={index}>
+        <td>{user.taiKhoan}</td>
+        <td>{user.hoTen}</td>
+        <td>{user.email}</td>
+        <td>{user.soDt}</td>
+        <td>{user.maLoaiNguoiDung}</td>
+        <td>
+          <button
+            className="btn btn-danger mr-2"
+            onClick={() => _handleDeleteUser(user.taiKhoan)}
+          >
+            Delete
+          </button>
+          <button
+            className="btn btn-info"
+            data-toggle="modal"
+            data-target="#modal_screen"
+            onClick={() => _handleOnUpdateUser(user)}
+          >
+            Update
+          </button>
+        </td>
+      </tr>
+    ));
+
+  const _searchUser = e => {
+    setState({
+      ...state,
+      [e.target.name]: e.target.value
+    });
+    dispatch(searchUser(e.target.value));
+  };
+
+  const _renderSearchUser = () =>
+    props.searchUserList.map((user, index) => (
       <tr key={index}>
         <td>{user.taiKhoan}</td>
         <td>{user.hoTen}</td>
@@ -61,7 +100,7 @@ const AdminScreen = props => {
     <div className="admin-screen">
       <nav className="navbar navbar-expand-md bg-dark navbar-dark">
         {/* Brand */}
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="/">
           Navbar
         </a>
         {/* Toggler/collapsibe Button */}
@@ -77,17 +116,17 @@ const AdminScreen = props => {
         <div className="collapse navbar-collapse" id="collapsibleNavbar">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="/">
                 Link
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="/">
                 Link
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="/">
                 Link
               </a>
             </li>
@@ -95,26 +134,26 @@ const AdminScreen = props => {
         </div>
       </nav>
       <div className="row">
-        <div className="col-2">
+        <div className="col-1 pt-5">
           <ul>
             <li>
-              <a href="#">Người dùng</a>
+              <a href="/">Users</a>
             </li>
             <li>
-              <a href="#">Phim</a>
+              <a href="/">Films</a>
             </li>
           </ul>
         </div>
-        <div className="col-10">
+        <div className="col-11">
           <div className="admin_screen_top">
-            <h1>Danh sách người dùng</h1>
+            <h1 className="text-center">List of Users</h1>
             <button
               className="btn btn-primary"
               data-toggle="modal"
               data-target="#modal_screen"
               onClick={_handleOnAddUser}
             >
-              Thêm người dùng
+              Add user
             </button>
           </div>
 
@@ -123,8 +162,9 @@ const AdminScreen = props => {
               <input
                 className="form-control"
                 type="text"
-                placeholder="Search.."
+                placeholder="Enter full name ..."
                 name="search"
+                onChange={_searchUser}
               />
               <button className="btn btn-search" type="button">
                 <i className="fa fa-search" />
@@ -144,7 +184,11 @@ const AdminScreen = props => {
                   </th>
                 </tr>
               </thead>
-              <tbody>{_renderListOfUsers()}</tbody>
+              <tbody>
+                {props.searchUserList.length <= 0
+                  ? _renderListOfUsers()
+                  : _renderSearchUser()}
+              </tbody>
             </table>
           </div>
         </div>
@@ -157,7 +201,8 @@ const AdminScreen = props => {
 const mapStateToProps = state => ({
   listOfUsers: state.user.listOfUsers,
   editStatus: state.status.editStatus,
-  editUser: state.user.editUser
+  editUser: state.user.editUser,
+  searchUserList: state.user.searchUserList
 });
 
 export default connect(mapStateToProps)(AdminScreen);

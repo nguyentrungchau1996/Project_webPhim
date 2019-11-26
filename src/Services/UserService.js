@@ -64,8 +64,7 @@ class UserService {
   deleteUser(username) {
     return restConnector({
       method: "DELETE",
-      url: "http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/XoaNguoiDung",
-      data: username
+      url: `http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${username}`
     });
   }
 
